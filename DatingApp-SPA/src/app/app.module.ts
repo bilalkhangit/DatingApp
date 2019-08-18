@@ -6,27 +6,26 @@ import { HttpClientModule } from "@angular/common/http";
 import { NavComponent } from "./nav/nav.component";
 import { FormsModule } from "@angular/forms";
 import { AuthService } from "./_services/auth.service";
-import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from "./home/home.component";
+import { RegisterComponent } from "./register/register.component";
+import { AlertifyService } from "./_services/alertify.service";
+import { BsDropdownModule } from "ngx-bootstrap";
 
 @NgModule({
-   declarations: [
-      AppComponent,
-      ValueComponent,
-      NavComponent,
-      HomeComponent,
-      RegisterComponent
-   ],
-   imports: [
-      BrowserModule,
-      HttpClientModule,
-      FormsModule
-   ],
-   providers: [
-      AuthService
-   ],
-   bootstrap: [
-      AppComponent
-   ]
+  declarations: [
+    AppComponent,
+    ValueComponent,
+    NavComponent,
+    HomeComponent,
+    RegisterComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    BsDropdownModule.forRoot()
+  ],
+  providers: [AuthService, AlertifyService],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
